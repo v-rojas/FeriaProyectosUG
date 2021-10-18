@@ -1,0 +1,119 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Sistemas y Networking</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h1 align="center">Calificación de Evaluador</h1>
+  <ion-grid fixed>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="12">
+        <ion-item lines="none">
+          <ion-icon slot="start" color="secondary" name="school"></ion-icon>
+          <p>{{projectData.nombre}}</p>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="12">
+        <ion-item lines="none">
+          <ion-icon slot="start" color="secondary" name="book"></ion-icon>
+          <p>{{subjectName}}</p>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="12">
+        <ion-item lines="none">
+          <ion-icon slot="start" color="secondary" name="person"></ion-icon>
+          <p>{{teacherName}}</p>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="12">
+        <ion-item lines="none">
+          <ion-icon slot="start" color="secondary" name="list"></ion-icon>
+          <ion-label>{{projectData.categoria}}</ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>  
+  
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="6">
+        <ion-label>Dominio del tema</ion-label>
+      </ion-col>
+      <ion-col size="6">
+        <ion-icon [name]="starD1" (click)="starToggleD(1)" color="warning"></ion-icon>
+        <ion-icon [name]="starD2" (click)="starToggleD(2)" color="warning"></ion-icon>
+        <ion-icon [name]="starD3" (click)="starToggleD(3)" color="warning"></ion-icon>
+        <ion-icon [name]="starD4" (click)="starToggleD(4)" color="warning"></ion-icon>
+        <ion-icon [name]="starD5" (click)="starToggleD(5)" color="warning"></ion-icon>
+      </ion-col>
+
+      <ion-col size="6">
+        <ion-label>Creatividad</ion-label>
+      </ion-col>
+      <ion-col size="6">
+        <ion-icon [name]="starC1" (click)="starToggleC(1)" color="warning"></ion-icon>
+        <ion-icon [name]="starC2" (click)="starToggleC(2)" color="warning"></ion-icon>
+        <ion-icon [name]="starC3" (click)="starToggleC(3)" color="warning"></ion-icon>
+        <ion-icon [name]="starC4" (click)="starToggleC(4)" color="warning"></ion-icon>
+        <ion-icon [name]="starC5" (click)="starToggleC(5)" color="warning"></ion-icon>
+      </ion-col>
+
+      <ion-col size="6">
+        <ion-label>Presentación grupal</ion-label>
+      </ion-col>
+      <ion-col size="6">
+        <ion-icon [name]="starP1" (click)="starToggleP(1)" color="warning"></ion-icon>
+        <ion-icon [name]="starP2" (click)="starToggleP(2)" color="warning"></ion-icon>
+        <ion-icon [name]="starP3" (click)="starToggleP(3)" color="warning"></ion-icon>
+        <ion-icon [name]="starP4" (click)="starToggleP(4)" color="warning"></ion-icon>
+        <ion-icon [name]="starP5" (click)="starToggleP(5)" color="warning"></ion-icon>
+      </ion-col>
+
+      <ion-col size="6">
+        <ion-label>Decoración</ion-label>
+      </ion-col>
+      <ion-col size="6">
+        <ion-icon [name]="starDec1" (click)="starToggleDec(1)" color="warning"></ion-icon>
+        <ion-icon [name]="starDec2" (click)="starToggleDec(2)" color="warning"></ion-icon>
+        <ion-icon [name]="starDec3" (click)="starToggleDec(3)" color="warning"></ion-icon>
+        <ion-icon [name]="starDec4" (click)="starToggleDec(4)" color="warning"></ion-icon>
+        <ion-icon [name]="starDec5" (click)="starToggleDec(5)" color="warning"></ion-icon>
+      </ion-col>
+
+      <ion-col size="6">
+        <ion-label>Recursos</ion-label>
+      </ion-col>
+      <ion-col size="6">
+        <ion-icon [name]="starR1" (click)="starToggleR(1)" color="warning"></ion-icon>
+        <ion-icon [name]="starR2" (click)="starToggleR(2)" color="warning"></ion-icon>
+        <ion-icon [name]="starR3" (click)="starToggleR(3)" color="warning"></ion-icon>
+        <ion-icon [name]="starR4" (click)="starToggleR(4)" color="warning"></ion-icon>
+        <ion-icon [name]="starR5" (click)="starToggleR(5)" color="warning"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <br><br>
+  <ion-row>
+    <ion-col size="6">
+      <ion-button (click)="goBack()" expand="block">
+        Regresar
+      </ion-button>
+    </ion-col>
+    <ion-col size="6">
+      <ion-button (click)="register()" expand="block">
+        Evaluar
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>

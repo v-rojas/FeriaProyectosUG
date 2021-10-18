@@ -1,0 +1,8 @@
+{
+  "name": "UgApp",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,24 @@
+  <div class="div-header-img">
+    <img src="assets/img/mobile.png" alt="uglogo">
+  </div>
+  <ion-content class="ion-padding">
+    <br>
+    <form [formGroup]="loginForm">
+    <ion-item>
+      <ion-input placeholder="Cédula" type="tel" formControlName="usuario" maxlength="10"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item>
+      <ion-input [type]="iconType" placeholder="Contraseña" formControlName="clave"></ion-input>
+      <ion-icon [name]="iconName" slot="end" (click)="toggleIconPassword()"></ion-icon>
+    </ion-item>
+    <br>
+    <ion-button (click)="getStarted()" expand="block" [disabled]="loginForm.invalid">
+      Iniciar Sesión
+    </ion-button>
+  </form>
+    <br><br>
+    <p align="center"><span style="color: var(--ion-color-primary);" (click)="register()">
+        Regístrate</span> | <span style="color: var(--ion-color-secondary);" (click)="password()">¿Olvidaste tu
+        contraseña?</span></p>
+  </ion-content>

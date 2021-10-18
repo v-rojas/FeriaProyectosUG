@@ -1,0 +1,24 @@
+ion-icon {    
+    color: var(--ion-color-primary);     
+}
+
+.div-header-img{
+    width: 100%;
+}
+
+img{
+    width: 0px;
+    animation: img 2s alternate;        
+    animation-fill-mode: forwards; 
+    animation-delay: .2s;    
+}
+
+@keyframes img {
+    from {
+        width: 0px;
+    }
+
+    to {
+        width: 250px;
+    }
+}

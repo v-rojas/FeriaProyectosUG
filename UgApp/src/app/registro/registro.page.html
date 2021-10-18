@@ -1,0 +1,81 @@
+<ion-content class="ion-padding">
+  <form [formGroup]="registerForm">
+    <h1 align="center">Formulario de Registro</h1>
+    <br><br>
+    <ion-item>
+      <ion-input placeholder="Nombres" formControlName="nombres" type="text"></ion-input>
+    </ion-item>
+    <div class="form-error-msg" *ngIf="registerForm.get('nombres').errors && registerForm.get('nombres').touched">
+      <p *ngIf="registerForm.get('nombres').hasError('required')" style="margin: 0;">Este campo es
+        obligatorio</p>
+      <p *ngIf="registerForm.get('nombres').hasError('pattern')" style="margin: 0;">Ingrese solo letras (excluya tildes)
+      </p>
+    </div>
+    <br>
+    <ion-item>
+      <ion-input placeholder="Apellidos" formControlName="apellidos" type="text"></ion-input>
+    </ion-item>
+    <div class="form-error-msg" *ngIf="registerForm.get('apellidos').errors && registerForm.get('apellidos').touched">
+      <p *ngIf="registerForm.get('apellidos').hasError('required')" style="margin: 0;">Este campo es
+        obligatorio</p>
+      <p *ngIf="registerForm.get('apellidos').hasError('pattern')" style="margin: 0;">Ingrese solo letras (excluya
+        tildes)</p>
+    </div>
+    <br>
+    <ion-select placeholder="Seleccione tipo de sexo" formControlName="sexo" [interfaceOptions]="ISexOption" ok-text="Aceptar" cancel-text="Cancelar">
+      <ion-select-option value="M">Masculino</ion-select-option>
+      <ion-select-option value="F">Femenino</ion-select-option>
+    </ion-select>
+    <div class="form-error-msg" *ngIf="registerForm.get('sexo').errors && registerForm.get('sexo').touched">
+      <p *ngIf="registerForm.get('sexo').hasError('required')" style="margin: 0;">Este campo es
+        obligatorio</p>
+    </div>
+    <br>
+    <ion-item>
+      <ion-input placeholder="Cédula" formControlName="cedula" type="tel" maxlength="10"></ion-input>
+    </ion-item>
+    <div class="form-error-msg" *ngIf="registerForm.get('cedula').errors && registerForm.get('cedula').touched">
+      <p *ngIf="registerForm.get('cedula').hasError('required')" style="margin: 0;">Este campo es
+        obligatorio</p>
+      <p *ngIf="registerForm.get('cedula').hasError('pattern')" style="margin: 0;">Ingrese solo números</p>
+      <p *ngIf="registerForm.get('cedula').hasError('minlength')" style="margin: 0;">Ingrese 10 dígitos</p>
+    </div>
+    <br>
+    <ion-item>
+      <ion-input placeholder="Correo" formControlName="correo" type="text"></ion-input>
+    </ion-item>
+    <div class="form-error-msg" *ngIf="registerForm.get('correo').errors && registerForm.get('correo').touched">
+      <p *ngIf="registerForm.get('correo').hasError('required')" style="margin: 0;">Este campo es
+        obligatorio</p>
+      <p *ngIf="registerForm.get('correo').hasError('pattern')" style="margin: 0;">Formato de correo inválido</p>
+    </div>
+    <br>
+    <ion-item>
+      <ion-input type="password" formControlName="clave1" placeholder="Contraseña"></ion-input>
+    </ion-item>
+    <div class="form-error-msg" *ngIf="registerForm.get('clave1').errors && registerForm.get('clave1').touched">
+      <p *ngIf="registerForm.get('clave1').hasError('required')" style="margin: 0;">Este campo es
+        obligatorio</p>
+    </div>
+    <br>
+    <ion-item>
+      <ion-input type="password" formControlName="clave2" placeholder="Repetir Contraseña"></ion-input>
+    </ion-item>
+    <div class="form-error-msg" *ngIf="registerForm.get('clave2').touched">
+      <p *ngIf="registerForm.errors?.misMatch" style="margin: 0;">Sus contraseñas no son iguales</p>
+    </div>
+    <br>
+    <ion-row>
+      <ion-col size="6">
+        <ion-button (click)="goBack()" expand="block">
+          Regresar
+        </ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button (click)="register()" expand="block" [disabled]="registerForm.invalid">
+          Registrarse
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

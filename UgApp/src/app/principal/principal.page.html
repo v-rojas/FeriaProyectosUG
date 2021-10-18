@@ -1,0 +1,18 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Sistemas y Networking</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="div-slide">
+    <ion-slides #slides mode="md" pager="true" [options]="slideOpts" loop="true" (ionSlideTouchEnd)="startPlaySlide()">
+      <ion-slide *ngFor="let img of images; let i = index">
+        <img [src]="img">
+      </ion-slide>
+    </ion-slides>
+  </div>  
+</ion-content>

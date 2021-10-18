@@ -1,0 +1,45 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Sistemas y Networking</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <br><br>
+  <h3 align="center">{{projectData.nombre}}</h3>
+  <br>
+  <div class="div-desc-container" *ngIf="showRateContainer">
+    <div class="div-desc">
+      <p>{{projectData.descripcionProy}}</p>
+    </div>
+    <br><br>
+    <ion-button (click)="scanCode()" expand="block">
+      Validar código QR
+    </ion-button>
+    <br>
+    <ion-button (click)="regresarProyectos()" expand="block">
+      Regresar
+    </ion-button>
+  </div>
+
+  <div class="div-calf-container" *ngIf="!showRateContainer">
+    <h3>Calificación</h3>
+    <p>{{projectData.nombre}}</p><br>
+    <p>{{teacherName}}</p><br>
+    <p>{{subjectName}}</p><br><br>
+    <ion-icon [name]="star1" (click)="starToggle(1)" color="warning"></ion-icon>
+    <ion-icon [name]="star2" (click)="starToggle(2)" color="warning"></ion-icon>
+    <ion-icon [name]="star3" (click)="starToggle(3)" color="warning"></ion-icon>
+    <ion-icon [name]="star4" (click)="starToggle(4)" color="warning"></ion-icon>
+    <ion-icon [name]="star5" (click)="starToggle(5)" color="warning"></ion-icon>
+    <br><br>
+    <ion-button (click)="saveRate()" expand="block">
+      Guardar
+    </ion-button>
+  </div>
+  <br>
+  <p style="color: crimson;">{{qrmessage}}</p>  
+</ion-content>

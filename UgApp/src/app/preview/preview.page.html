@@ -1,0 +1,43 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Sistemas y Networking</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-grid fixed>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="12">
+        <ion-item lines="none">
+          <ion-icon slot="start" color="secondary" name="school"></ion-icon>
+          <p>{{projectData.nombre}}</p>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="12">
+        <ion-item lines="none">
+          <ion-icon slot="start" color="secondary" name="book"></ion-icon>
+          <p>{{subjectName}}</p>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="12">
+        <ion-item lines="none">
+          <ion-icon slot="start" color="secondary" name="person"></ion-icon>
+          <p>{{teacherName}}</p>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>  
+  <h3>Decripción del proyecto</h3>
+  <p>{{projectData.descripcionProy}}</p>
+  <br>
+  <ion-button (click)="regresarProyectos()" expand="block">
+    Regresar
+  </ion-button>
+</ion-content>
